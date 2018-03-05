@@ -1,0 +1,31 @@
+<!doctype html>
+<html ng-app="controller">
+	<head>
+		<title>Hello AngularJS</title>
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.3/angular.min.js"></script>
+    	<script src="controller.js"></script>
+	</head>
+
+	<body ng-controller="Controller">
+
+		<div>
+			<p>The ID is {{greeting.id}}</p>
+			<p>The content is {{greeting.content}}</p>
+		</div>
+		<form name="myForm">
+			<label>
+				<input type="radio" ng-model="color.name" value="red">
+				Red
+			</label><br/>
+			<label>
+				<input type="radio" ng-model="color.name" value="green">
+				Green
+			</label><br/>
+			<label>
+				<input type="radio" ng-model="color.name" value="blue">
+				Blue
+			</label><br/>
+			<tt>color = {{color.name | json}}</tt><br/>
+		</form>
+	</body>
+</html>

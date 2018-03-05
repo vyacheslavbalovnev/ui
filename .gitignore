@@ -1,0 +1,12 @@
+*.iml
+*.ipr
+*.iws
+*.log
+*.log.*
+.idea
+target
+*.sdf
+.classpath
+.project
+.settings
+run
