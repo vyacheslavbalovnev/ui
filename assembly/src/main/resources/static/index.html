@@ -14,16 +14,28 @@
 		</div>
 		<form name="myForm">
 			<label>
-				<input type="radio" ng-model="color.name" value="red">
-				Red
+				<input type="radio" ng-model="color.name" value="FPS">
+				First-Person Shooter
 			</label><br/>
 			<label>
-				<input type="radio" ng-model="color.name" value="green">
-				Green
+				<input type="radio" ng-model="color.name" value="TPA">
+				Third-Person Action
 			</label><br/>
 			<label>
-				<input type="radio" ng-model="color.name" value="blue">
-				Blue
+				<input type="radio" ng-model="color.name" value="Survival_Horror">
+				Survival Horror
+			</label><br/>
+			<label>
+				<input type="radio" ng-model="color.name" value="RPG">
+				Role-Playing Game
+			</label><br/>
+			<label>
+				<input type="radio" ng-model="color.name" value="Story">
+				Story-Driven Game
+			</label><br/>
+			<label>
+				<input type="radio" ng-model="color.name" value="Other">
+				Other (What doesn't fit in previous genres)
 			</label><br/>
 			<tt>color = {{color.name | json}}</tt><br/>
 		</form>
