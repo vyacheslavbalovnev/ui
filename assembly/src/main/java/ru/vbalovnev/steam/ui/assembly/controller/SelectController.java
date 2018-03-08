@@ -1,23 +1,36 @@
 package ru.vbalovnev.steam.ui.assembly.controller;
 
-import com.sun.org.apache.bcel.internal.generic.Select;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
+import ru.vbalovnev.steam.ui.service.GameService;
+import ru.vbalovnev.steam.ui.service.model.Game;
+import ru.vbalovnev.steam.ui.service.model.GameGenre;
 import ru.vbalovnev.steam.ui.assembly.model.GameInfo;
-import ru.vbalovnev.steam.ui.assembly.model.Greeting;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.function.Function;
+import java.util.stream.Collectors;
 
 @RestController
 public class SelectController {
 
+    @Autowired
+    private GameService gameService;
+
     @RequestMapping("/select")
-    public List<GameInfo> select(@RequestParam(value="query") String query) {
-        List<GameInfo> list = new ArrayList<>();
-        list.add(new GameInfo("nameOfGame", 1999, "Dev", "Publ"));
-        list.add(new GameInfo("nameOfGame1", 2000, "ev", "Publ1"));
-        return list;
+    public List<GameInfo> select(@RequestParam(value="query") GameGenre query) {
+
+        List<Game> games = gameService.select(query);
+
+        return games
+            .stream()
+            .map(transform)
+            .collect(Collectors.toList());
     }
+
+    public Function<Game, GameInfo> transform =
+        i -> new GameInfo(i.getName(), i.getYearOfRelease(), i.getDeveloper(), i.getPublisher());
 }
