@@ -37,7 +37,25 @@
 				<input type="radio" ng-model="color.name" value="Other">
 				Other (What doesn't fit in previous genres)
 			</label><br/>
-			<tt>color = {{color.name | json}}</tt><br/>
-		</form>
+			<!--<tt>color = {{color.name | json}}</tt><br/>-->
+			<button ng-click="select()" ng-disabled="isDisabled()">
+				Show
+			</button>
+
+			<table>
+				<tr>
+					<td>Game</td>
+					<td>Year of release</td>
+					<td>Developer</td>
+					<td>Publisher</td>
+				</tr>
+				<tr ng-repeat="item in list">
+					<td>{{ item.name }}</td>
+					<td>{{ item.yearOfRelease }}</td>
+					<td>{{ item.developer }}</td>
+					<td>{{ item.publisher }}</td>
+				</tr>
+			</table>
+			</form>
 	</body>
 </html>
