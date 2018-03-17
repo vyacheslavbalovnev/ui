@@ -1,13 +1,19 @@
 <!doctype html>
 <html ng-app="controller">
 	<head>
-		<title>Hello AngularJS</title>
+		<title>Game Informer</title>
 		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.3/angular.min.js"></script>
     	<script src="controller.js"></script>
 	</head>
 
 	<body ng-controller="Controller">
+
+	<div align="center">
+		<h3>Game Informer</h3>
 		<form name="myForm">
+			<table>
+				<tr>
+					<td>
 			<label>
 				<input type="radio" ng-model="color.name" value="FPS">
 				First-Person Shooter
@@ -36,18 +42,21 @@
 				<input type="radio" ng-model="color.name" value="OTHER">
 				Other (What doesn't fit in previous genres)
 			</label><br/>
+					</td>
+				</tr>
+			</table>
 			<!--<tt>color = {{color.name | json}}</tt><br/>-->
 			<button ng-click="select()" ng-disabled="isDisabled()">
 				Show
 			</button>
 
-			<table>
+			<table border="2px" ng-show="list.length != 0">
 				<tr>
-					<td>Game</td>
-					<td>Year of release</td>
-					<td>Developer</td>
-					<td>Publisher</td>
-					<td>Link</td>
+					<td align="center"><b>Game</b></td>
+					<td align="center"><b>Year of release</b></td>
+					<td align="center"><b>Developer</b></td>
+					<td align="center"><b>Publisher</b></td>
+					<td align="center"><b>Link</b></td>
 				</tr>
 				<tr ng-repeat="item in list">
 					<td>{{ item.name }}</td>
@@ -58,5 +67,6 @@
 				</tr>
 			</table>
 			</form>
+	</div>
 	</body>
 </html>

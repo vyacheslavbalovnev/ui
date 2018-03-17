@@ -21,46 +21,8 @@ import static junit.framework.TestCase.assertFalse;
 import static junit.framework.TestCase.assertNotNull;
 
 public class XlsReaderTest {
-//
-//    public static byte[] loadFile(String nameFile) {
-//        try (InputStream inputStream = FileUtils.class.getResourceAsStream(nameFile)) {
-//            return IOUtils.toByteArray(inputStream);
-//        } catch (IOException ex) {
-//            ex.printStackTrace();
-//        }
-//        return null;
-//    }
-//
-//    @Test
-//    public void readFile() throws IOException {
-//        byte[] bytes = loadFile("/xlsx/Advise-list.xlsx");
-//        assertNotNull(bytes);
-//        final ByteArrayInputStream byteInStream = new ByteArrayInputStream(bytes);
-//        final XSSFWorkbook workbook = new XSSFWorkbook(byteInStream);
-//        final XSSFSheet sheet = workbook.getSheetAt(1);
-//
-//        final Iterator<Row> rowIterator = sheet.rowIterator();
-//        while (rowIterator.hasNext()) {
-//            final Row row = rowIterator.next();
-//            final int rowNum = row.getRowNum();
-//            final Cell cell = row.getCell(1);
-//            if (isNull(cell)) {
-//                break;
-//            }
-//            System.out.println(cell.getStringCellValue());
-//        }
-//    }
 
-//    @Test
-//    public void testRPG() {
-//        XlsReader xlr = new XlsReaderImpl();
-//        List<List<String>> data = xlr.getData(GameGenre.RPG);
-//
-//        assertFalse(data.isEmpty());
-//
-//    }
-
-    @Test
+    //@Test
     public void test() {
         XlsReader xlr = new XlsReaderImpl();
         for (GameGenre gameGenre : GameGenre.values()) {
