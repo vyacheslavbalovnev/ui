@@ -58,6 +58,8 @@ public class XlsReaderImpl implements XlsReader {
                     continue;
                 }
                 List<String> cells = new ArrayList<>();
+                cells.add(String.valueOf(rowNum));
+
                 cells.add(cell.getStringCellValue());
                 final Cell cellYear = row.getCell(2);
                 cells.add(formatter.formatCellValue(cellYear));

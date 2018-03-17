@@ -8,6 +8,7 @@ import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.request.MockHttpServletRequestBuilder;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
+import ru.vbalovnev.steam.ui.assembly.repository.RepositoryData;
 import ru.vbalovnev.steam.ui.service.DataService;
 import ru.vbalovnev.steam.ui.service.GameService;
 import ru.vbalovnev.steam.ui.service.model.Game;
@@ -30,6 +31,10 @@ public class SelectControllerTest {
     @Mock
     private GameService gameService;
 
+    @Mock
+    private RepositoryData repositoryData;
+
+
     private MockMvc mockMvc;
 
     @BeforeMethod
@@ -50,8 +55,8 @@ public class SelectControllerTest {
         doAnswer(
             i -> {
                 List<Game> list = new ArrayList<>();
-                list.add(new Game("nameOfGame", 1999, "Dev", "Publ"));
-                list.add(new Game("nameOfGame1", 2000, "ev", "Publ1"));
+                list.add(new Game("id1", "nameOfGame", 1999, "Dev", "Publ"));
+                list.add(new Game("id2","nameOfGame1", 2000, "ev", "Publ1"));
                 return list;
             }
         ).when(gameService)

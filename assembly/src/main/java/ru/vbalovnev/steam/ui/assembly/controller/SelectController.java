@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
+import ru.vbalovnev.steam.ui.assembly.repository.RepositoryData;
 import ru.vbalovnev.steam.ui.service.GameService;
 import ru.vbalovnev.steam.ui.service.model.Game;
 import ru.vbalovnev.steam.ui.service.model.GameGenre;
@@ -20,10 +21,22 @@ public class SelectController {
     @Autowired
     private GameService gameService;
 
+    @Autowired
+    private RepositoryData repositoryData;
+
     @RequestMapping("/select")
     public List<GameInfo> select(@RequestParam(value="query") GameGenre query) {
 
         List<Game> games = gameService.select(query);
+
+        repositoryData.clean();
+        games
+            .stream()
+            .forEach(
+                    game -> {
+                        repositoryData.add(game.getId(), game);
+                }
+            );
 
         return games
             .stream()
@@ -32,5 +45,5 @@ public class SelectController {
     }
 
     public Function<Game, GameInfo> transform =
-        i -> new GameInfo(i.getName(), i.getYearOfRelease(), i.getDeveloper(), i.getPublisher());
+        i -> new GameInfo(i.getId(),i.getName(), i.getYearOfRelease(), i.getDeveloper(), i.getPublisher());
 }

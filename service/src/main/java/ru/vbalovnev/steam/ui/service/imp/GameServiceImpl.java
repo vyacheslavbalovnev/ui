@@ -26,9 +26,10 @@ public class GameServiceImpl implements GameService {
             list.add(
                 new Game(
                     row.get(0),
-                    Integer.valueOf(row.get(1)),
-                        row.get(2),
-                        row.get(3)
+                    row.get(1),
+                    Integer.valueOf(row.get(2)),
+                        row.get(3),
+                        row.get(4)
                 )
             );
 

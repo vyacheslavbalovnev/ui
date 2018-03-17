@@ -5,6 +5,7 @@ import org.springframework.context.annotation.Configuration;
 import ru.vbalovnev.steam.ui.assembly.controller.FileDownloadController;
 import ru.vbalovnev.steam.ui.assembly.controller.GreetingController;
 import ru.vbalovnev.steam.ui.assembly.controller.SelectController;
+import ru.vbalovnev.steam.ui.assembly.repository.RepositoryData;
 
 @Configuration
 @ComponentScan(basePackageClasses = {
@@ -12,7 +13,8 @@ import ru.vbalovnev.steam.ui.assembly.controller.SelectController;
 
     GreetingController.class,
     SelectController.class,
-    FileDownloadController.class
+    FileDownloadController.class,
+    RepositoryData.class
 })
 public class AssemblyConfig {
 }
