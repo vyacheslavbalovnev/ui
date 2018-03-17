@@ -37,7 +37,7 @@ public class XlsReaderImpl implements XlsReader {
     public List<List<String>> getData(GameGenre gameGenre) {
         try {
             List<List<String>> rows = new ArrayList<>();
-            byte[] bytes = loadFile("/xlsx/Advise-list.xlsx");
+            byte[] bytes = loadFile("/xlsx/Spisok.xlsx");
             final ByteArrayInputStream byteInStream = new ByteArrayInputStream(bytes);
             final XSSFWorkbook workbook = new XSSFWorkbook(byteInStream);
             final XSSFSheet sheet = workbook.getSheetAt(gameGenre.getSheetId());

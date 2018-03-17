@@ -30,6 +30,10 @@
 				Role-Playing Game
 			</label><br/>
 			<label>
+				<input type="radio" ng-model="color.name" value="Adventure">
+				Action-Adventure
+			</label><br/>
+			<label>
 				<input type="radio" ng-model="color.name" value="STORY">
 				Story-Driven Game
 			</label><br/>
@@ -48,12 +52,14 @@
 					<td>Year of release</td>
 					<td>Developer</td>
 					<td>Publisher</td>
+					<td>Link</td>
 				</tr>
 				<tr ng-repeat="item in list">
 					<td>{{ item.name }}</td>
 					<td>{{ item.yearOfRelease }}</td>
 					<td>{{ item.developer }}</td>
 					<td>{{ item.publisher }}</td>
+					<td><a target="_blank" href="/download/external">Get game card</a></td>
 				</tr>
 			</table>
 			</form>
