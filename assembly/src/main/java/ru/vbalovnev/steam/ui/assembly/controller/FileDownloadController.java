@@ -29,7 +29,8 @@ public class FileDownloadController {
             result = "Game info not found";
         } else{
            result = "Name: " + game.getName() + " (" + game.getYearOfRelease() + ")";
-           ;
+            result = result + "\n";
+            result = result + game.getDescription();
         }
         response.setContentType("text/plain; charset=UTF-8");
 

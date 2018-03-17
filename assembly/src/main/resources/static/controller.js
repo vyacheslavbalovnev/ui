@@ -4,11 +4,6 @@ angular.module('controller', [])
     $scope.color = {
         name: 'UNSELECTED'
       };
-    $http.get('/greeting').
-        then(function(response) {
-            $scope.greeting = response.data;
-
-        });
     $scope.select = function() {
 //    alert("click");
 

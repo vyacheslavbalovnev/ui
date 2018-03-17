@@ -9,7 +9,6 @@ import org.springframework.test.web.servlet.request.MockHttpServletRequestBuilde
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 import ru.vbalovnev.steam.ui.assembly.repository.RepositoryData;
-import ru.vbalovnev.steam.ui.service.DataService;
 import ru.vbalovnev.steam.ui.service.GameService;
 import ru.vbalovnev.steam.ui.service.model.Game;
 import ru.vbalovnev.steam.ui.service.model.GameGenre;
@@ -55,8 +54,8 @@ public class SelectControllerTest {
         doAnswer(
             i -> {
                 List<Game> list = new ArrayList<>();
-                list.add(new Game("id1", "nameOfGame", 1999, "Dev", "Publ"));
-                list.add(new Game("id2","nameOfGame1", 2000, "ev", "Publ1"));
+                list.add(new Game("id1", "nameOfGame", 1999, "Dev", "Publ", "Desc1"));
+                list.add(new Game("id2","nameOfGame1", 2000, "ev", "Publ1", "Desc2"));
                 return list;
             }
         ).when(gameService)

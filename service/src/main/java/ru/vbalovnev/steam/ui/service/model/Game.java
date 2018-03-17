@@ -7,13 +7,15 @@ public class Game {
     private int yearOfRelease;
     private String developer;
     private String publisher;
+    private String description;
 
-    public Game(String id, String name, int yearOfRelease, String developer, String publisher) {
+    public Game(String id, String name, int yearOfRelease, String developer, String publisher, String description) {
         this.id = id;
         this.name = name;
         this.yearOfRelease = yearOfRelease;
         this.developer = developer;
         this.publisher = publisher;
+        this.description = description;
     }
 
     public String getId() {
@@ -34,5 +36,9 @@ public class Game {
 
     public String getPublisher() {
         return publisher;
+    }
+
+    public String getDescription() {
+        return description;
     }
 }
