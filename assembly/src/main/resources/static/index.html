@@ -52,6 +52,7 @@
 
 			<table border="2px" ng-show="list.length != 0">
 				<tr>
+					<td align="center"><b>Image</b></td>
 					<td align="center"><b>Game</b></td>
 					<td align="center"><b>Year of release</b></td>
 					<td align="center"><b>Developer</b></td>
@@ -59,6 +60,10 @@
 					<td align="center"><b>Link</b></td>
 				</tr>
 				<tr ng-repeat="item in list">
+					<td>
+						<img ng-show="item.image" src="images/{{ item.image }}" alt="picture" width="200px" height="300px">
+						<span ng-show="!item.image" >TBA</span>
+					</td>
 					<td>{{ item.name }}</td>
 					<td>{{ item.yearOfRelease }}</td>
 					<td>{{ item.developer }}</td>

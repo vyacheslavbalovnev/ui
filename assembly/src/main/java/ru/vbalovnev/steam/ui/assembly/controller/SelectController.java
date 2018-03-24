@@ -45,5 +45,5 @@ public class SelectController {
     }
 
     public Function<Game, GameInfo> transform =
-        i -> new GameInfo(i.getId(),i.getName(), i.getYearOfRelease(), i.getDeveloper(), i.getPublisher());
+        i -> new GameInfo(i.getId(),i.getName(), i.getYearOfRelease(), i.getDeveloper(), i.getPublisher(), i.getImage());
 }

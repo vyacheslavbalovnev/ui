@@ -69,6 +69,12 @@ public class XlsReaderImpl implements XlsReader {
                 cells.add(cellPub.getStringCellValue());
                 final Cell cellDesc = row.getCell(5);
                 cells.add(cellDesc.getStringCellValue());
+                final Cell cellImage = row.getCell(6);
+                if(cellImage != null && cellImage.getStringCellValue().length() > 0 ) {
+                    cells.add(cellImage.getStringCellValue());
+                } else {
+                    cells.add(null);
+                }
 
                 rows.add(cells);
             }

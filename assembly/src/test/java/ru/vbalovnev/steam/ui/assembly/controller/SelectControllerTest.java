@@ -54,8 +54,8 @@ public class SelectControllerTest {
         doAnswer(
             i -> {
                 List<Game> list = new ArrayList<>();
-                list.add(new Game("id1", "nameOfGame", 1999, "Dev", "Publ", "Desc1"));
-                list.add(new Game("id2","nameOfGame1", 2000, "ev", "Publ1", "Desc2"));
+                list.add(new Game("id1", "nameOfGame", 1999, "Dev", "Publ", "Desc1", "img"));
+                list.add(new Game("id2","nameOfGame1", 2000, "ev", "Publ1", "Desc2", "img1"));
                 return list;
             }
         ).when(gameService)
